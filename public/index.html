@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+	<head>
+
+    	<base href="/">
+    	<meta charset="utf-8">
+    	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="">
+        <meta name="author" content="">
+
+		<!--CSS-->
+		<link rel="stylesheet" type="text/css" href="assets/libs/bootstrap-3.3.7-dist/css/bootstrap.css">
+		<link rel="stylesheet" type="text/css" href="assets/css/style.css">
+
+		<!--Angular Files-->
+		<script src="assets/libs/angular-1.6.3/angular.js"></script>
+		<script src="assets/libs/angular-1.6.3/angular-route.js"></script>
+
+		<!--Angular App Config-->
+		<script src="app/app.js"></script>
+
+          <!--Angular morraCinese section-->
+          <script src="app/morraCinese/morraCinese.module.js"></script>
+          <script src="app/morraCinese/morraCinese.route.js"></script>
+          <script src="app/morraCinese/morraCinese.controller.js"></script>
+
+		<title>Morra Cinese Home</title>
+	</head>
+	<body ng-app="App" ng-cloak> <!-- angular start (ng-cloak direttiva che permette di al nostro codice angular di non essere visualizzato mentre sta ancora caricando)-->
+		<!-- Fixed navbar -->
+        <nav class="navbar navbar-inverse navbar-fixed-top">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              <a class="navbar-brand" href="#">Morra Cinese Trial</a>
+            </div>
+            <div id="navbar" class="navbar-collapse collapse">
+              <ul class="nav navbar-nav">
+                <li><a href="/home">Home</a></li>
+                <li><a href="/gioco">Gioca Subito</a></li>
+              </ul>
+            </div><!--/.nav-collapse -->
+          </div>
+        </nav>
+        <br/>
+    	<div class="container" ng-view></div>
+
+        <!-- Bootstrap core JavaScript -->
+        <script type="text/javascript" src="assets/libs/jquery-3.2.0.min.js"></script>
+        <script type="text/javascript" src="assets/libs/bootstrap-3.3.7-dist/js/bootstrap.js"></script>
+	</body>
+</html>

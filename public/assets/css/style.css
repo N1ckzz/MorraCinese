@@ -1,0 +1,47 @@
+#immagine{
+   width: 100px;
+   height: 100px;
+}
+
+.header{
+   font-family: sans-serif;
+   color: green;
+   text-align: center;
+}
+
+.wrapper {
+    display: flex;               /* establish flex container */
+    align-items: center;         /* vertically center flex items */
+}
+
+.centr-horiz{
+   text-align: center;
+}
+
+.row-bordered{
+   border: 3px solid green;
+   border-radius: 10px;
+}
+
+.col-bordered{
+   border: 3px solid blue;
+}
+
+.btn-margin{
+   margin: 0 15px;
+}
+
+.thumbnail-xs{
+   width: 50px;
+   height: 50px;
+   display: block;
+   margin: auto;
+   float: left;
+}
+
+.thumbnail-md{
+   width: 100px;
+   height: 100px;
+   display: block;
+   margin: auto;
+}

@@ -1,0 +1,22 @@
+{
+  "name": "morra_cinese",
+  "version": "1.0.0",
+  "description": "morra cinese trial",
+  "main": "server.js",
+  "dependencies": {
+    "angular": "^1.6.3",
+    "bootstrap": "^3.3.7",
+    "express": "^4.15.2",
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "morraCinese",
+    "trial",
+    "angular"
+  ],
+  "author": "nicola bellotti",
+  "license": "ISC"
+}
