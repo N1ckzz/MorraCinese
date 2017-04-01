@@ -7,7 +7,7 @@
 
 2)Spostarsi nella cartella dove è presente il file server.js e digitare:
 
-			node server.js
+			node server.js o npm start
 
 
 3)Aprire il browser e andare a:
