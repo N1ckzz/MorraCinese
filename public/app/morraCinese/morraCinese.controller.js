@@ -66,16 +66,21 @@
 
 			//funzione di passaggio fra il setup del gioco (fase 1) alla (fase 2) il gioco
 			app.startGame = function(){
-				app.loadingMsg = "Inizializzo la partita...attendi...";
-				app.loading = true;
-				if(app.count==$scope.matches){
-					app.noMoreGames = true;
+				console.log($scope.matches);
+				if($scope.matches == 0 || !$scope.matches){
+					alert("Hai selezionato 0 partite da fare, inserisci un numero valido (1-99)");
+				} else {
+					app.loadingMsg = "Inizializzo la partita...attendi...";
+					app.loading = true;
+					if(app.count==$scope.matches){
+						app.noMoreGames = true;
+					}
+					$timeout(function(){
+						app.titolo = "Morra Cinese: partita " + app.count + " di " + $scope.matches;
+						app.loading = false;
+						app.setup = false;
+					}, 2000);
 				}
-				$timeout(function(){
-					app.titolo = "Morra Cinese: partita " + app.count + " di " + $scope.matches;
-					app.loading = false;
-					app.setup = false;
-				}, 2000);
 			};
 
 			//funzione che randomizza la scelta del computer, che calcola chi vince e incrementa il punteggio
@@ -150,9 +155,17 @@
 				$timeout(function(){
 						app.finalLoading = false;
 						if(app.player1.points > app.player2.points){
-							app.finalWinnerMsg = "Il vincitore finale della partita è....." + app.player1.name + " con " + app.player1.points + " punti, congratulazioni!!!";
+							if(app.player1.points == 1){
+								app.finalWinnerMsg = "Il vincitore finale della partita è....." + app.player1.name + " con " + app.player1.points + " punto, congratulazioni!!!";
+							} else {
+								app.finalWinnerMsg = "Il vincitore finale della partita è....." + app.player1.name + " con " + app.player1.points + " punti, congratulazioni!!!";
+							}
 						} else if (app.player1.points < app.player2.points){
-							app.finalWinnerMsg = "Il vincitore finale della partita è.....Il " + app.player2.name + " con " + app.player2.points + " punti, mi dispiace " + app.player1.name + " non arrenderti!!!";
+							if(app.player2.points == 1){
+								app.finalWinnerMsg = "Il vincitore finale della partita è.....Il " + app.player2.name + " con " + app.player2.points + " punto, mi dispiace " + app.player1.name + " non arrenderti!!!";
+							} else {
+								app.finalWinnerMsg = "Il vincitore finale della partita è.....Il " + app.player2.name + " con " + app.player2.points + " punti, mi dispiace " + app.player1.name + " non arrenderti!!!";
+							}
 						} else {
 							app.finalWinnerMsg = "Nessun vincitore nella partita corrente, entrambi avete vinto esattamente " + app.player1.points + " partite!!";
 						}
